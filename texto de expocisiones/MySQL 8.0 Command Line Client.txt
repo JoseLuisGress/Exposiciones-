@@ -1,0 +1,216 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.36 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create databases ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databases' at line 1
+mysql> create database ejemplo1 ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use ejemplo1;
+Database changed
+mysql> create table usuarios (
+    -> id int(7) NOT NULL PRIMARY KEY,
+    -> nombre VARCHAR(255),
+    -> correo VARCHAR(255)
+    -> );
+Query OK, 0 rows affected, 1 warning (0.06 sec)
+
+mysql> describe usuarios;
++--------+--------------+------+-----+---------+-------+
+| Field  | Type         | Null | Key | Default | Extra |
++--------+--------------+------+-----+---------+-------+
+| id     | int          | NO   | PRI | NULL    |       |
+| nombre | varchar(255) | YES  |     | NULL    |       |
+| correo | varchar(255) | YES  |     | NULL    |       |
++--------+--------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> create table vehiculos(
+    -> patente CHAR(6) NOT NULL,
+    -> tipo CHAR(4),
+    -> horallegada TIME NOT NULL,
+    -> horasalida TIME,
+    -> PRIMARY KEY(patente,horallegada)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> describe vehiculos
+    -> describe vehiculos;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'describe vehiculos' at line 2
+mysql> describe vehiculos ;
++-------------+---------+------+-----+---------+-------+
+| Field       | Type    | Null | Key | Default | Extra |
++-------------+---------+------+-----+---------+-------+
+| patente     | char(6) | NO   | PRI | NULL    |       |
+| tipo        | char(4) | YES  |     | NULL    |       |
+| horallegada | time    | NO   | PRI | NULL    |       |
+| horasalida  | time    | YES  |     | NULL    |       |
++-------------+---------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> create tabla empleado (
+    -> IdEmpleado INT AUTO_INCREMENT PRIMARY KEY,
+    -> primerNombre VARCHAR(10),
+    -> segundoNombre VARCHAR(10),
+    -> apellidop VARCHAR(20),
+    -> apellidom VARCHAR(20),
+    -> edad INT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tabla empleado (
+IdEmpleado INT AUTO_INCREMENT PRIMARY KEY,
+primerNombre VARCHAR' at line 1
+mysql>
+mysql> create tabla empleado (
+    -> IdEmpleado INT AUTO_INCREMENT PRIMARY KEY,
+    -> primerNombre VARCHAR(10),
+    -> segundoNombre VARCHAR(10),
+    -> apellidop VARCHAR(20),
+    -> apellidom VARCHAR(20),
+    -> edad INT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'tabla empleado (
+IdEmpleado INT AUTO_INCREMENT PRIMARY KEY,
+primerNombre VARCHAR' at line 1
+mysql> create table empleado (
+    -> IdEmpleado INT AUTO_INCREMENT PRIMARY KEY,
+    -> primerNombre VARCHAR(10),
+    -> segundoNombre VARCHAR(10),
+    -> apellidop VARCHAR(20),
+    -> apellidoM VARCHAR(20),
+    -> edad INT);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> describe empleado ;
++---------------+-------------+------+-----+---------+----------------+
+| Field         | Type        | Null | Key | Default | Extra          |
++---------------+-------------+------+-----+---------+----------------+
+| IdEmpleado    | int         | NO   | PRI | NULL    | auto_increment |
+| primerNombre  | varchar(10) | YES  |     | NULL    |                |
+| segundoNombre | varchar(10) | YES  |     | NULL    |                |
+| apellidop     | varchar(20) | YES  |     | NULL    |                |
+| apellidoM     | varchar(20) | YES  |     | NULL    |                |
+| edad          | int         | YES  |     | NULL    |                |
++---------------+-------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> create table estudiante(
+    -> matricula INT AUTO-INCREMENT PRIMARY KEY  COMMENT 'id_del_alumno',
+    -> carrera VARCHAR(20),
+    -> promedio INT NOT NULL,
+    -> grupo INT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTO-INCREMENT PRIMARY KEY  COMMENT 'id_del_alumno',
+carrera VARCHAR(20),
+promed' at line 2
+mysql> create table estudiante(
+    -> matricula INT AUTO-INCREMENT PRIMARY KEY  COMMENT 'id_del_alumno',
+    -> carrera VARCHAR(20),
+    -> promedio INT NOT NULL,
+    -> grupo INT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTO-INCREMENT PRIMARY KEY  COMMENT 'id_del_alumno',
+carrera VARCHAR(20),
+promed' at line 2
+mysql> create table estudiante(
+    -> matricula INT AUTO_INCREMENT PRIMARY KEY  COMMENT 'id_del_alumno',
+    -> carrera VARCHAR(20),
+    -> promedio INT NOT NULL,
+    -> grupo INT);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> describe estudiante ;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| matricula | int         | NO   | PRI | NULL    | auto_increment |
+| carrera   | varchar(20) | YES  |     | NULL    |                |
+| promedio  | int         | NO   |     | NULL    |                |
+| grupo     | int         | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> create database fantasmas ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use fantasmas;
+Database changed
+mysql> create table integrantes (id INT(5) NOT NULL PRIMARY KEY, Nombre VARCHAR(40), Edad INT);
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> describe integrantes;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | NO   | PRI | NULL    |       |
+| Nombre | varchar(40) | YES  |     | NULL    |       |
+| Edad   | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into  integrantes(id, Nombre, Edad) values (1,"Daniel",23);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into  integrantes(id, Nombre, Edad) values (2,"Axel",20);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into  integrantes(id, Nombre, Edad) values (3,"Almir",18);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from integrantes;
++----+--------+------+
+| id | Nombre | Edad |
++----+--------+------+
+|  1 | Daniel |   23 |
+|  2 | Axel   |   20 |
+|  3 | Almir  |   18 |
++----+--------+------+
+3 rows in set (0.00 sec)
+
+mysql> replace INTO integrantes (id, Nombre, Edad) values (3,"Yoav", 24);
+Query OK, 2 rows affected (0.01 sec)
+
+mysql> select * from integrantes;
++----+--------+------+
+| id | Nombre | Edad |
++----+--------+------+
+|  1 | Daniel |   23 |
+|  2 | Axel   |   20 |
+|  3 | Yoav   |   24 |
++----+--------+------+
+3 rows in set (0.00 sec)
+
+mysql> update integrantes set edad = "20";
+Query OK, 2 rows affected (0.03 sec)
+Rows matched: 3  Changed: 2  Warnings: 0
+
+mysql> select * from integrantes;
++----+--------+------+
+| id | Nombre | Edad |
++----+--------+------+
+|  1 | Daniel |   20 |
+|  2 | Axel   |   20 |
+|  3 | Yoav   |   20 |
++----+--------+------+
+3 rows in set (0.00 sec)
+
+mysql> update integrantes set edad = "19" WHERE Nombre = "Daniel";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from integrantes;
++----+--------+------+
+| id | Nombre | Edad |
++----+--------+------+
+|  1 | Daniel |   19 |
+|  2 | Axel   |   20 |
+|  3 | Yoav   |   20 |
++----+--------+------+
+3 rows in set (0.00 sec)
+
+mysql>
